@@ -31,11 +31,11 @@ ALCALDIAS <- spTransform(shapefile("POLIGONOS/ALCALDIAS.shp"), "+proj=longlat +d
 #SHP vialidades primarias
 VIALIDADES_PRIMARIAS <- spTransform(shapefile("POLIGONOS/VIALIDADES CATEGO_PRIMARIA.shp"), "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 #Ordenamos las variables de los tipos de delitos
-orden <- order(unique(base$incidente_c4))
-casos <- unique(base$incidente_c4)
+orden <- order(unique(base$incidente))
+casos <- unique(base$incidente)
 casos[orden]
 
-Robo_Vehiculo_con_Violencia <- base[which((base$incidente_c4) == "Robo-Vehiculo con Violencia"),]
+Robo_Vehiculo_con_Violencia <- base[which((base$incidente) == "Robo-Vehiculo con Violencia"),]
 
 
 tag.map.title <- tags$style(HTML("
@@ -176,7 +176,7 @@ leaflet()  %>%
                                                  ")) %>%
   
   addLegendCustom(colors, labels, sizes, shapes, borders)%>%  
-  
+  ### dependiendo es que se elimine, sera el filtro en el mapa al iniciarse 
   hideGroup(c( "&nbsp; <b>Vista </b> &nbsp; ",
                
                paste("Puntos","(",nrow(Robo_Vehiculo_con_Violencia),")"),
