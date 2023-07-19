@@ -23,7 +23,7 @@ library(webshot)
 library(graphics)
 library(leafem)
 
-setwd("C:/Users/gyanezp/Desktop/Proyectos/3. Mapas HTML/Pruebas/Camaras 5C/")
+setwd("") ## ruta de la hubicación de los RECURSOS
 #base = tipo de delitos
 base <- read.csv("THALES_BASE_2019_2020_parte_1.csv", header = T,stringsAsFactors = F)
 #SHP alcaldias
